@@ -1,5 +1,6 @@
-# Basic Starter Kit
+# CPSC 1012 A03 Sep 2024 Workbook
 
-## Owner your name
+## Owner Don Welch
 
-alter this statement to indicate the usage of this repository
+This repo will be used to hold the class room demonstrations for the course. There will be NO code for
+evaluation marks in this repository.
