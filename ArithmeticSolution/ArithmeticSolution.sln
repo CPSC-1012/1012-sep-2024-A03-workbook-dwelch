@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularDivision", "ModularD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CylinderAreaAndVolume", "CylinderAreaAndVolume\CylinderAreaAndVolume.csproj", "{F5933CB0-E0FD-43C0-8018-E6A7EBFD1A3D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonArea", "HexagonArea\HexagonArea.csproj", "{DE52C3A0-AB4D-464C-BA97-8CE0A2F03CDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F5933CB0-E0FD-43C0-8018-E6A7EBFD1A3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5933CB0-E0FD-43C0-8018-E6A7EBFD1A3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5933CB0-E0FD-43C0-8018-E6A7EBFD1A3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE52C3A0-AB4D-464C-BA97-8CE0A2F03CDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE52C3A0-AB4D-464C-BA97-8CE0A2F03CDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE52C3A0-AB4D-464C-BA97-8CE0A2F03CDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE52C3A0-AB4D-464C-BA97-8CE0A2F03CDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
