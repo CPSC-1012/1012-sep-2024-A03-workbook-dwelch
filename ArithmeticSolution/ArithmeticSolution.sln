@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PythagoreanTheorem", "Pytha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularDivision", "ModularDivision\ModularDivision.csproj", "{4AE5C07F-6C93-4E91-8024-543F2C6C35C5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CylinderAreaAndVolume", "CylinderAreaAndVolume\CylinderAreaAndVolume.csproj", "{F5933CB0-E0FD-43C0-8018-E6A7EBFD1A3D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{4AE5C07F-6C93-4E91-8024-543F2C6C35C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AE5C07F-6C93-4E91-8024-543F2C6C35C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AE5C07F-6C93-4E91-8024-543F2C6C35C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5933CB0-E0FD-43C0-8018-E6A7EBFD1A3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5933CB0-E0FD-43C0-8018-E6A7EBFD1A3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5933CB0-E0FD-43C0-8018-E6A7EBFD1A3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5933CB0-E0FD-43C0-8018-E6A7EBFD1A3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
