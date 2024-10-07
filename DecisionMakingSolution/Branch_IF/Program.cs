@@ -61,6 +61,11 @@ else
     {
         //at this point in your proces, you can assume your data is valid
 
+
+        //NOTE: the relative operator here is NOT an equals
+        //      this means this branch CANNOT be coded as a case-structure
+        //      ALL case-structures can be coded as a branch structure BUT
+        //          not all branch structures can be coded as a case structure
         if (age <= 6)
         {
             //logic for 6 and under
