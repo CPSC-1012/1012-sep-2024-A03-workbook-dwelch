@@ -56,7 +56,7 @@ for (int index = 0; index < PHYSICALSIZE; index++)
 //traverse (walk through the array) the array display each array element
 for (int index = 0; index < PHYSICALSIZE; index++)
 {
-    Console.WriteLine($"The grade at index {index} is the {index+1}th element and is {grades[index]}");
+   // Console.WriteLine($"The grade at index {index} is the {index+1}th element and is {grades[index]}");
 }
 
 //declaring the array size by supplying a set of values on the declaring statement
@@ -71,7 +71,7 @@ string[] dayOfWeek = new string[] {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sa
 //the array size property is: .Length
 for (int index = 0; index < dayOfWeek.Length; index++)
 {
-    Console.WriteLine($"The week day at index {index} is the {index+1}th element and is {dayOfWeek[index]}");
+  //  Console.WriteLine($"The week day at index {index} is the {index+1}th element and is {dayOfWeek[index]}");
 }
 
 //array have built-in functionality that you as a coder can use
@@ -96,8 +96,94 @@ for (int index = 0; index < PHYSICALSIZE; index++)
 }
 
 //clear the array
-Array.Clear(grades);
-for (int index = 0; index < grades.Length; index++) //you be using .Length for grades instead of PHYSICALSIZE
+//Array.Clear(grades);
+//for (int index = 0; index < grades.Length; index++) //you be using .Length for grades instead of PHYSICALSIZE
+//{
+//    Console.WriteLine($"The grade at index {index} is the {index+1}th element and is {grades[index]}");
+//}
+
+//locating items within your array collection
+//there are several techniques to locating an item in your collection
+//a) traverse whole collection : counter loop -> for
+//b) traverse until found: sentinal loop -> while
+//c) using built-in methods
+
+//obtain from the user the value to find
+Console.Write("\n\tEnter the value to locate:\t");
+double locateArg = double.Parse(Console.ReadLine());
+
+//option a
+bool found = false; //assume that the data is not in the collection
+int foundIndex = -1;
+for(int index = 0; index < grades.Length; index++) //could have also used PHYSICALSIZE
 {
-    Console.WriteLine($"The grade at index {index} is the {index+1}th element and is {grades[index]}");
+    if(locateArg == grades[index])
+    {
+        found = true; //indicates argument values was found
+        foundIndex = index;
+        index = PHYSICALSIZE; //this would be quick exit for the counter loop
+    }
+}
+
+//display the result of the search
+if(found)
+{
+    Console.WriteLine($"\nYour search for {locateArg} was successful. It was found at element {foundIndex + 1}.\n");
+}
+else
+{
+    Console.WriteLine($"\nYour search for {locateArg} was unsuccessful. It was not found.\n");
+
+}
+
+//option b
+found = false; //assume that the data is not in the collection
+foundIndex = -1;
+int quickIndex = 0; //using the while required the coder to manage the index
+while(!found && quickIndex < PHYSICALSIZE)
+{
+    if (locateArg == grades[quickIndex])
+    {
+        found = true; //indicates argument values was found
+        foundIndex = quickIndex;
+    }
+    quickIndex++; //need to do your own increment
+}
+
+Console.WriteLine($"\n\tExiting the loop at index {quickIndex--}\n");
+
+//display the result of the search
+if (found)
+{
+    Console.WriteLine($"\nYour search for {locateArg} was successful. It was found at element {foundIndex + 1}.\n");
+}
+else
+{
+    Console.WriteLine($"\nYour search for {locateArg} was unsuccessful. It was not found.\n");
+
+}
+
+// option c
+//Array has a method that will do the search for you
+//Array FindIndex(arrayname, predicate)
+//predicate syntax: x => condition
+// where x represents any element in the array
+// => lamda symbol (read as: do the following)
+//predicate which is the condition to execute for the current element of the array
+//what is returned
+//  not found returns -1
+//  found returns the index of the FIRST element satisfying the predicate
+
+foundIndex = -1;
+foundIndex = Array.FindIndex(grades, x => x == locateArg);
+
+//display the result of the search
+if (foundIndex >= 0)
+{
+    Console.WriteLine($"\nYour search for {locateArg} was successful. It was found at element {foundIndex + 1}.\n");
+}
+else
+{
+    Console.WriteLine($"\nYour search for {locateArg} was unsuccessful. It was not found.\n");
+
 }
