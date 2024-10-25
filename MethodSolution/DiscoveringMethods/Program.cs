@@ -110,7 +110,7 @@ static void DisplayClass(string[] names, int[] numbers, int logicalSize)
     //any variable that is required for this code must be declared within the method
     //any variable that is declared within the method exists ONLY as long as the method
     //  executes
-    //concern any parameter variable as a locally declared variable
+    //consider any parameter variable as a locally declared variable
     Console.WriteLine("\nClass list with marks\n");
     for (int index = 0; index < logicalSize; index++)
     {
