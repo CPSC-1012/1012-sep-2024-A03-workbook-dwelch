@@ -77,10 +77,26 @@ static int GetNumber(string prompt)
 {
     //since this method returns a value, you will need to put a temporary
     //  return statement in the coding block
+    bool validFlag = false;
+    string inputValue = "";
+    int number = 0;
+    do
+    {
+        validFlag = true;
+       
+        Console.Write($"{prompt}:\t");
+        inputValue = Console.ReadLine();
+        if (!int.TryParse(inputValue, out number))
+        {
+            Console.WriteLine($"\n\tInput error: >{inputValue}< is not a number");
+            validFlag = false;
+        }
 
+    } while (!validFlag);
+    return number;
     //this return statement is only here in the stub to return a valid value
     //this return statement WILL be replaced once the method is actually coded
-    return 0;
+    //return 0;
 }
 
 
