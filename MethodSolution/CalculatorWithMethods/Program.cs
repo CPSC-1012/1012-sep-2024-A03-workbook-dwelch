@@ -26,7 +26,9 @@ switch (choice.ToUpper())
 {
     case "A":
         {
-            Console.WriteLine("Add");
+            results = num1 + num2;
+            validFlag = true;
+            symbol = "+";
             break;
         }
     case "B":
@@ -104,8 +106,8 @@ static int GetNumber(string prompt)
 //  this method will receive the 2 numbers involved in the calculation, the calculation
 //  result, a flag indicating the success of the calculation and a symbol representing the
 //  calculation. Require out sample; 4 + 5 = 9
-static void DisplayResults(int num1, int num2, double results, bool valid, string sybmol)
+static void DisplayResults(int num1, int num2, double results, bool valid, string symbol)
 {
-
+    Console.WriteLine($"\n\t{num1} {symbol} {num2} = {results}");
 }
 #endregion
