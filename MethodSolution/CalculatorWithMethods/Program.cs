@@ -33,17 +33,32 @@ switch (choice.ToUpper())
         }
     case "B":
         {
-            Console.WriteLine("Subtract");
+            results = num1 - num2;
+            validFlag = true;
+            symbol = "-";
             break;
         }
     case "C":
         {
-            Console.WriteLine("Multiply");
+            results = num1 * num2;
+            validFlag = true;
+            symbol = "*"; 
+          
             break;
         }
     case "D":
         {
-            Console.WriteLine("Divide");
+            if (num2 != 0)
+            {
+                results = num1 / num2;
+                validFlag = true;
+                symbol = "/";
+            }
+            else
+            {
+                Console.WriteLine("\n\tDividing by zero is invalid.\n");
+                validFlag = false;
+            }
             break;
         }
     default:
@@ -108,6 +123,7 @@ static int GetNumber(string prompt)
 //  calculation. Require out sample; 4 + 5 = 9
 static void DisplayResults(int num1, int num2, double results, bool valid, string symbol)
 {
-    Console.WriteLine($"\n\t{num1} {symbol} {num2} = {results}");
+    if (valid)
+        Console.WriteLine($"\n\t{num1} {symbol} {num2} = {results}");
 }
 #endregion
