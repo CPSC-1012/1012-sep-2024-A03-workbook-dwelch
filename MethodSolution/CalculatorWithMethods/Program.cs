@@ -22,7 +22,35 @@ DisplayMenu();
 choice = Console.ReadLine();
 
 //decide the choice and do the calculation
-//switch
+switch (choice.ToUpper())
+{
+    case "A":
+        {
+            Console.WriteLine("Add");
+            break;
+        }
+    case "B":
+        {
+            Console.WriteLine("Subtract");
+            break;
+        }
+    case "C":
+        {
+            Console.WriteLine("Multiply");
+            break;
+        }
+    case "D":
+        {
+            Console.WriteLine("Divide");
+            break;
+        }
+    default:
+        {
+            Console.WriteLine("Your option choice is invalid. Try again.");
+            break;
+        }
+}
+
 
 //display the results of the calculation
 DisplayResults(num1, num2, results, validFlag, symbol);
