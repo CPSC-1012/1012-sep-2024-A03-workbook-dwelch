@@ -15,13 +15,18 @@ Dog myDog; //this is a variable capable of holding an instance of Dog
 //  to create a new instance
 myDog = new Dog();
 
+
 //to access an item within your instance your code will use the dot (.) operate
 //assigning a value to the public characteristic _Name (using a mutator)
-myDog.SetName("No");
+//myDog.SetName("No");
+myDog.Name = "No"; //using a property looks "more like" an assignment to a variable
+myDog.SetAge(4.5);
+myDog.CelebrateBrithday();
 
 //access data within the current instance one could use the characteristic
 //  name if the access level is public (using an accessor)
-Console.WriteLine($"My dog is called {myDog.GetName()}");
-Console.WriteLine($"My dog is {myDog.????} years old");
+//Console.WriteLine($"My dog is called {myDog.GetName()}");  //using a method
+Console.WriteLine($"My dog is called {myDog.Name}");  //using a property
+Console.WriteLine($"My dog is {myDog.GetAge()} years old");
 
 
