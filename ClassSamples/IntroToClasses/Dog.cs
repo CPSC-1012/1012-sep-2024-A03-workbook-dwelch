@@ -122,8 +122,89 @@ namespace Animals
 
         public string Name
         {
+            //accessor
             get { return _Name; }  //retreives the current value store in the private data member
+            //mutator
             set { _Name = value; } //stores the incoming data into the private data member
+        }
+
+        public double Age
+        {
+            //rule: age must be zero or greater
+            get { return _Age; }  //retreives the current value store in the private data member
+            set 
+            { 
+                if (value < 0)
+                {
+                    throw new Exception($"{value} as an Age is invalid. Must be 0 to greater.");
+                }
+                _Age = value; 
+            } //stores the incoming data into the private data member
+        }
+
+        public string OwnerFirstName
+        {
+            get { return _OwnerFirstName; }
+            set 
+            {
+                //validation of the incoming data
+                //rule: the string cannot be null, empty or content just blanks
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    //bad data
+                    //cast an error message
+                    //within a class, casting error messages is done using Exceptions
+                    //if this exception is throw, then the processing in the class
+                    //  is terminated and the system returns to where the property
+                    //  was being used.
+                    //  ONE DOES NOT USE CONSOLE.WRITELINE WITHIN THE CLASS TO 
+                    //      DISPLAY ERROR MESSAGES!!!!!!!!!!!!!!!!!!!!!!!!!
+                    throw new Exception("You are missing the owner first name.");
+                }
+                //since the error would through an error and exit the proper if
+                //  there was an error; the else of the conditional statement
+                //  is optionally
+
+                //else
+                //{
+                    _OwnerFirstName = value;
+                //}
+            }
+        }
+
+        public string OwnerLastName
+        {
+            get { return _OwnerLastName; }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new Exception("You are missing the owner first name.");
+                }
+                _OwnerLastName = value;
+            }
+        }
+
+        public string Breed
+        {
+            //accessor
+            get { return _Breed; }  //retreives the current value store in the private data member
+            //mutator
+            set { _Breed = value; } //stores the incoming data into the private data member
+        }
+
+        //  a property without a setter is referred to as "readonly"
+        public string FullName
+        {
+            //this property will use the first and last name to create a string
+            //  that contains the owner's full name
+
+            //Don's Rule: wherever possible within the class coding, use the property
+            //              to acces your data.
+
+            get { return OwnerLastName + "," + OwnerFirstName; }
+
+            //NOTE: no set!!!!!!!!
         }
     }
 }
