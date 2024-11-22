@@ -36,11 +36,17 @@ try
     myDog.OwnerFirstName = "Lowand"; //the validation is within the class definition
                                      //the programmer using the class DOES NOT need to code the validation
     myDog.OwnerLastName = "Behold";
+    Console.WriteLine("\n\nDog created with default constructor\n");
+    DisplayMyPet(myDog);
+
+    myDog = new Dog("Boo", 13, "Charity", "Kase", "Mixed");
+    Console.WriteLine("\n\nDog created with greedy constructor\n");
     DisplayMyPet(myDog);
 }
 catch(Exception ex)
 {
     Console.WriteLine($"Class data error: {ex.Message}");
+    
 }
 
 

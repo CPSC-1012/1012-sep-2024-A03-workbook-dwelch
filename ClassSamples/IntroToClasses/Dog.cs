@@ -73,6 +73,15 @@ namespace Animals
                                         //using Age++ .Floor(4.5) -> 4 -> 4.5 + 1 -> 5.5 
         }
 
+        //overloaded method
+        //overloaded methods are methods with the same method name BUT a
+        //  different list of parameters
+        public void CelebrateBrithday(double newage)
+        {
+            
+            _Age = newage;  
+        }
+
         //Each class has a given set of methods
         //ONe such method is called ToString()
         //this method can of overridden with your OWN version
@@ -206,5 +215,118 @@ namespace Animals
 
             //NOTE: no set!!!!!!!!
         }
+
+        //Constructors
+
+        //  these are used during the creation of an instance (occurance) of your
+        //    class during your program execution
+
+        //a class DOES NOT need a constructor physically code for it
+        //if a class DOES NOT have a physically code constructor method then
+        //      the system will create the instance of your class
+        //      using the system default values for your field datatype
+
+        //HOWEVER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        //IF YOU CODE A CONSTRUCTOR PHYSCIALLY FOR YOUR CLASS, YOU ARE TOTALLY
+        //      RESPONSIBLE FOR ANY AND ALL CONSTRUCTORS OF THE CLASS
+        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+        //how many constructors can a class have? Many
+
+        //the purpose of the constructor is to ensure that the user of the class
+        //  gets an expected usable valid instance of the class
+
+        //there is generally two types of constructors coded for a class
+        //you DO NOT need to code both!!!
+
+        //syntax for a general constructor
+        //   public className( [list of parameters] ) { coding block }
+
+        //access: public
+        //NO RETURN DATATYPE
+        //name: is your class name
+        //parameters: are optional
+        //coding block: is C# code
+
+        //Default constructor
+        //this constructor will not have any parameters
+        //the assumption is the data will have either
+        //  a) the system datatype defualts
+        //  b) any assigned literal values to ensure property validation is meet
+
+        public Dog()
+        {
+            //IF there is no code in your default constructor assigning
+            //  values to your data members, the data members will be set
+            //  to their system defaults
+
+            //the default constructor is often compared to the "system" constructor
+
+            //SINCE our properties have business rules (validation)
+            //  our "default" constructor should ensure that data members within
+            //  our class instance passes any validation
+
+            //Consideration!!!!
+            //does the property have any validation that would be violation
+            //  by just using the system datatype defaults?
+
+            //in this example Name, FirstName and LastName cannot be null, empty or just blanks
+            //thus, a literal value was assigned that would pass the valdiation
+
+            //Age has a validation but the system datatype default would survice
+
+            OwnerFirstName = "Unknown";
+            OwnerLastName = "Unknown";
+
+            ////optionally
+            ////if you wished, you could assign values to your other data members
+            ////  even though they have acceptable defualt values
+            Age = 0;
+            Name = "unknown";
+            Breed = "unknown";
+        }
+
+        // Greedy Constructor
+        //this constructor will receive a set of values for the data within the class
+        //the parameters list is a complete list of values to cover all data members
+        //  within the class
+        //the constructor will assign the incoming values to the appropriate
+        //  data members.
+        //BEST PRACTICE: ASSIGN THE INCOMING VALUES TO THE DATA MEMBERS VIA THEIR PROPERTY
+        //Why: the data will be validated 
+
+        public Dog(string name, double age, string ownerfirstname,
+                        string ownerlastname, string breed)
+        {
+            //it is possible to include validation for your incoming data within
+            //  the greed constructor 
+            //you might do this IF your properties do NOT contain validation
+            //                  IF you have additional validation that is not within the property
+            //                  IF your setter is private (not part of this course)
+            //REMEMBER that once the instance is created using the constructor ANY alternations
+            //  to you data via properties or methods, should, contain validation
+            //Question? Why have the same code in multiple places
+            //Solution:
+            //  a) create a method that could be called from anywhere in the class defintion
+            //      (Modular approach)
+            //  b) if you use the practice of accessing your data via the properties
+            //      within the class definition, then the validation could be placed
+            //      in one location: properties. (Don's Rule)
+
+            //in this demo, Name does not have any validation in the property
+            //one could do the validation in this constructor
+            //one would have to do the same validation every other place in the class
+            //  coding that could possible alter the Name data member
+            if(string.IsNullOrWhiteSpace(name))
+            {
+                throw new Exception("Name is missing its data");
+            }
+            Name = name;
+            Age = age;
+            OwnerFirstName = ownerfirstname;
+            OwnerLastName = ownerlastname;
+            Breed = breed;
+        }
     }
 }
+
