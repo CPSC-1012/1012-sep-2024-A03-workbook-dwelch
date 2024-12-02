@@ -33,6 +33,11 @@ namespace CompositeClassess
             Phone = phone;
         }
 
+        public Owner()
+        {
+
+        }
+
         public override string ToString()
         {
             return $"{FirstName},{LastName},{Phone}";

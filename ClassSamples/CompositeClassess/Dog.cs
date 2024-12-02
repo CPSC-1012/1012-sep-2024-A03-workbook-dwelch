@@ -120,6 +120,7 @@ namespace Animals
             //create an instance of the class Owner to be used
             //  within this class
             DogOwner = new Owner("Unknown", "Unknown", "000-000-0000");
+
         }
 
         public Dog(string name, double age, string breed, Owner owner)
